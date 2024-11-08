@@ -10,7 +10,6 @@ ROS2 packages for Boxer
 cd ~/colcon_ws/src/
 git clone https://github.com/roasinc/boxer_ros2.git
 ```
-
 > [!IMPORTANT]  
 > Install on the backpack computer.
 
@@ -25,3 +24,5 @@ colcon build --symlink-install
 ```
 ros2 launch boxer_bringup bringup_launch.py
 ```
+> [!TIP]  
+> Check the Boxer's API version and serial number before running.
