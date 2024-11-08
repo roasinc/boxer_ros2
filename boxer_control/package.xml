@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>boxer_control</name>
+  <version>0.1.2</version>
+  <description>Controllers and control configuration for BOXER.</description>
+  <maintainer email="civerachb@clearpathrobotics.com">Chris Iverach-Brereton</maintainer>
+  <author email="dniewinski@clearpathrobotics.com">Dave Niewinski</author>
+  <author email="mpurvis@clearpathrobotics.com">Mike Purvis</author>
+  <author email="modriscoll@clearpath.ai">Mike O'Driscoll</author>
+  <author email="shlee@roas.co.kr">Brighten Lee</author> 
+
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend> 
+
+  <depend>controller_interface</depend>
+  <depend>controller_manager</depend>
+  <depend>nav_msgs</depend>
+  <depend>boxer_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>robot_localization</depend>
+  <depend>joy_linux</depend>
+  <depend>teleop_twist_joy</depend>
+  <depend>twist_mux</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
