@@ -7,3 +7,8 @@ ROS2 packages for Boxer
 
 > [!IMPORTANT]  
 > Install on the backpack computer.
+
+## Usage
+```
+ros2 launch boxer_bringup bringup_launch.py
+```
