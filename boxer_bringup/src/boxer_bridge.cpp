@@ -40,6 +40,10 @@ public:
     this->get_parameter("relay_odom", relay_odom_);
     this->get_parameter("relay_scan", relay_scan_);
 
+    sub_odom_ = this->create_subscription<nav_msgs::msg::Odometry>(
+        "/cpr_platform_api/" + api_version_ + "/" + serial_no_ + "/platform/odom", rclcpp::SensorDataQoS(),
+        [=](const nav_msgs::msg::Odometry::SharedPtr msg) { OdometryCallback(msg); });
+
     if (relay_odom_)
     {
       pub_odom_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", rclcpp::SensorDataQoS());
@@ -55,9 +59,6 @@ public:
           std::make_shared<realtime_tools::RealtimePublisher<sensor_msgs::msg::LaserScan>>(pub_front_scan_);
       rp_rear_scan_ = std::make_shared<realtime_tools::RealtimePublisher<sensor_msgs::msg::LaserScan>>(pub_rear_scan_);
 
-      sub_odom_ = this->create_subscription<nav_msgs::msg::Odometry>(
-          "/cpr_platform_api/" + api_version_ + "/" + serial_no_ + "/platform/odom", rclcpp::SensorDataQoS(),
-          [=](const nav_msgs::msg::Odometry::SharedPtr msg) { OdometryCallback(msg); });
       sub_front_scan_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
           "/cpr_platform_api/" + api_version_ + "/" + serial_no_ + "/laser/module0/scan", rclcpp::SensorDataQoS(),
           [=](const sensor_msgs::msg::LaserScan::SharedPtr msg) {
