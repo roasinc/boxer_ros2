@@ -7,15 +7,19 @@ ROS2 packages for Boxer
 
 ### Install packages
 ```shell
-cd ~/colcon_ws/src
+cd ~/colcon_ws/src/
 git clone https://github.com/roasinc/boxer_ros2.git
-
-cd ~/colcon_ws
-rosdep install --from-paths src --ignore-src -y
 ```
 
 > [!IMPORTANT]  
 > Install on the backpack computer.
+
+### Build
+```shellll --from-paths src --ignore-src -y
+cd ~/colcon_ws/
+rosdep insta
+colcon build --symlink-install
+```
 
 ## Usage
 ```
