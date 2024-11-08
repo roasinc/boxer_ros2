@@ -6,4 +6,4 @@
 ROS2 packages for Boxer
 
 > [!IMPORTANT]  
-> Intall on the backpack computer.
+> Install on the backpack computer.
