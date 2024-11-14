@@ -16,7 +16,7 @@ foreach(Dependency IN ITEMS ${DEPENDENCIES})
 endforeach()
 
 install(
-  DIRECTORY config launch
+  DIRECTORY config launch maps rviz params
   DESTINATION share/${PROJECT_NAME}
 )
 
