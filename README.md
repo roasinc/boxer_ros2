@@ -21,8 +21,17 @@ colcon build --symlink-install
 ```
 
 ## Usage
+### Backpack PC
 ```
+zenoh-bridge-ros2dds
 ros2 launch boxer_bringup bringup_launch.py
+ros2 launch boxer_navigation slam_launch.py or nav2_launch.py
+```
+### Remote PC
+```
+zenoh-bridge-ros2dds -e tcp/<robot_ip>:7447
+sudo ip l set lo multicast on
+ros2 launch boxer_navigation rviz_launch.py
 ```
 > [!TIP]  
 > Check the Boxer's API version and serial number before running.
