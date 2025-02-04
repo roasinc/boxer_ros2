@@ -43,5 +43,16 @@ ros2 launch boxer_navigation rviz_launch.py
 gedit ~/.bashrc
  > export ROS1_INSTALL_PATH=/opt/ros/noetic
  > export ROS2_INSTALL_PATH=~/ros2_rolling/install
+
+mkdir -p ~/bridge_ws/src
+cd ~/bridge_ws/src
+git clone https://github.com/ros2/ros1_bridge.git
+cd ~/bridge_ws
+colcon build —symlink-install —packager-skip ros1_bridge
+
+source /opt/ros/noetic/setup.bash
+source ~/ros2_humble/install/setup.bash
+
+colcon build —symlink-install —packager-select ros1_bridge —cmake-force-configure
 ```
 
