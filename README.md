@@ -35,3 +35,13 @@ ros2 launch boxer_navigation rviz_launch.py
 ```
 > [!TIP]  
 > Check the Boxer's API version and serial number before running.
+
+## Bridge & Zenoh DDS
+
+### Backpack PC ( Bridge )
+gedit ~/.bashrc
+```
+export ROS1_INSTALL_PATH=/opt/ros/noetic
+export ROS2_INSTALL_PATH=~/ros2_rolling/install
+```
+
