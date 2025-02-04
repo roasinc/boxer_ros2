@@ -38,7 +38,7 @@ ros2 launch boxer_navigation rviz_launch.py
 
 
 
-## Bridge & Zenoh DDS Setting
+## :memo: Bridge & Zenoh DDS Setting
 
 ### Backpack PC ( Bridge )
 ```
