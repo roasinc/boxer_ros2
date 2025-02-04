@@ -36,6 +36,8 @@ ros2 launch boxer_navigation rviz_launch.py
 > [!TIP]  
 > Check the Boxer's API version and serial number before running.
 
+
+
 ## Bridge & Zenoh DDS Setting
 
 ### Backpack PC ( Bridge )
