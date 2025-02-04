@@ -36,7 +36,7 @@ ros2 launch boxer_navigation rviz_launch.py
 > [!TIP]  
 > Check the Boxer's API version and serial number before running.
 
-## Bridge & Zenoh DDS
+## Bridge & Zenoh DDS Setting
 
 ### Backpack PC ( Bridge )
 ```
@@ -55,4 +55,28 @@ source ~/ros2_humble/install/setup.bash
 
 colcon build —symlink-install —packager-select ros1_bridge —cmake-force-configure
 ```
+참고 : https://github.com/jayprajapati009/ros1_bridge_tutorial
 
+### Backpack PC ( Zenoh DDS )
+```
+echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo apt update
+
+sudo apt install zenoh-bridge-ros2dds
+docker pull eclipse/zenoh-bridge-ros2dds:latest
+
+zenoh-bridge-ros2dds
+```
+
+### Remote PC ( Zenoh DDS )
+```
+echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo apt update
+
+sudo apt install zenoh-bridge-ros2dds
+docker pull eclipse/zenoh-bridge-ros2dds:latest
+
+sudo ip l set lo multicast on
+zenoh-bridge-ros2dds -e tcp/<robot-ip>:7447
+```
+참고 : https://github.com/eclipse-zenoh/zenoh-plugin-ros2dds?tab=readme-ov-file#linux-debian
